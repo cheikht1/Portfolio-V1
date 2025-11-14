@@ -10,7 +10,7 @@ RUN npm run build
 FROM nginx:stable-alpine
 
 # Remove the default config to avoid conflicts
-RUN rm /etc/nginx/conf.d/default.conf
+RUN rm -f /etc/nginx/conf.d/default.conf
 
 # Copy built assets
 COPY --from=build /app/dist /usr/share/nginx/html
