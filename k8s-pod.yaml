@@ -5,10 +5,12 @@ metadata:
   labels:
     app: portfolio
 spec:
+  imagePullSecrets:
+    - name: ghcr-credentials
   restartPolicy: Always
   containers:
     - name: portfolio-web
-      image: portfolio-web:latest
+      image: ghcr.io/cheikht1/portfolio-web:latest
       imagePullPolicy: IfNotPresent
       ports:
         - containerPort: 80
