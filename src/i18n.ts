@@ -4,6 +4,7 @@ export const translations = {
       home: 'Accueil',
       about: 'À Propos',
       skills: 'Compétences',
+      education: 'Formation',
       experiences: 'Expériences',
       projects: 'Projets',
       certifications: 'Certifications',
@@ -36,13 +37,25 @@ export const translations = {
     contact: {
       title: 'Me Contacter',
       workingTogether: 'Travaillons ensemble',
+      subtitle: 'Discutons de vos défis data, cloud ou fintech et trouvons la bonne solution.',
       email: 'Email',
       phone: 'Téléphone',
       location: 'Localisation',
-      sendMessage: 'Envoyer le message'
+      sendMessage: 'Envoyer le message',
+      form: {
+        name: 'Nom',
+        email: 'Email',
+        message: 'Message'
+      }
     },
     projects: {
-      title: 'Projets & Dashboards'
+      title: 'Projets & Dashboards',
+      demo: 'Voir le projet',
+      code: 'Voir le code'
+    },
+    education: {
+      title: 'Parcours Académique',
+      subtitle: 'Programmes diplômants et formations certifiantes orientés data, finance et cloud'
     },
     experiences: {
       title: 'Expériences Professionnelles'
@@ -60,6 +73,7 @@ export const translations = {
       home: 'Home',
       about: 'About',
       skills: 'Skills',
+      education: 'Education',
       experiences: 'Experiences',
       projects: 'Projects',
       certifications: 'Certifications',
@@ -73,23 +87,44 @@ export const translations = {
     },
     about: {
       title: 'About',
+      headline: 'Versatile professional across Data & IT',
       paragraph1: `Passionate about turning data into actionable insights and optimizing IT infrastructures, I combine technical expertise with strategic vision to deliver innovative solutions.`,
       paragraph2: `Currently at Orange MEA, I supervise critical infrastructures while developing fraud detection systems based on machine learning.`,
       paragraph3: `My DevOps approach and deep knowledge of AWS allow me to design scalable and resilient architectures.`
     },
+    aboutStats: {
+      yearsExperience: 'Years of experience',
+      projectsDone: 'Projects delivered',
+      certifications: 'Certifications',
+      location: 'Location'
+    },
     skills: {
-      title: 'Skills'
+      title: 'Skills',
+      dataTitle: 'Data & Analytics',
+      cloudTitle: 'Cloud / DevOps / Big Data'
     },
     contact: {
       title: 'Contact Me',
       workingTogether: 'Let’s work together',
+      subtitle: 'Reach out to discuss your data, cloud, or fintech initiatives and how we can partner.',
       email: 'Email',
       phone: 'Phone',
       location: 'Location',
-      sendMessage: 'Send Message'
+      sendMessage: 'Send Message',
+      form: {
+        name: 'Name',
+        email: 'Email',
+        message: 'Message'
+      }
     },
     projects: {
-      title: 'Projects & Dashboards'
+      title: 'Projects & Dashboards',
+      demo: 'View project',
+      code: 'View code'
+    },
+    education: {
+      title: 'Academic Background',
+      subtitle: 'Degree programs and professional training aligned with data, finance, and cloud excellence'
     },
     experiences: {
       title: 'Work Experience'

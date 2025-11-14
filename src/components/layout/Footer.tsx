@@ -1,4 +1,4 @@
-import { Linkedin, Github, Mail, MapPin, Phone, Globe } from 'lucide-react';
+import { Linkedin, Github, Mail, MapPin, Phone } from 'lucide-react';
 import { useProfile } from '../../contexts/ProfileContext';
 import { contactInfo } from '../../data/contact';
 import { useLocale } from '../../contexts/LocaleContext';
@@ -56,6 +56,8 @@ const Footer = () => {
               {[
                 { label: t('nav.home'), href: '#home' },
                 { label: t('nav.about'), href: '#about' },
+                { label: t('nav.skills'), href: '#skills' },
+                { label: t('nav.education'), href: '#education' },
                 { label: t('nav.projects'), href: '#projects' },
                 { label: t('nav.contact'), href: '#contact' }
               ].map((item) => (

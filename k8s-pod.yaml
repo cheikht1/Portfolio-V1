@@ -2,24 +2,49 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: portfolio-pod
+  labels:
+    app: portfolio
 spec:
+  restartPolicy: Always
   containers:
-    - name: web
+    - name: portfolio-web
       image: portfolio-web:latest
       imagePullPolicy: IfNotPresent
       ports:
         - containerPort: 80
       volumeMounts:
-        - name: logs
+        - name: nginx-logs
           mountPath: /var/log/nginx
-
-    - name: log-watcher
+      resources:
+        requests:
+          cpu: "100m"
+          memory: "128Mi"
+        limits:
+          cpu: "250m"
+          memory: "256Mi"
+    - name: log-collector
       image: busybox:1.36
-      command: ["sh", "-c", "tail -F /var/log/nginx/access.log /var/log/nginx/error.log"]
+      args:
+        - /bin/sh
+        - -c
+        - |
+          mkdir -p /logs/relevant;
+          tail -n0 -F /var/log/nginx/error.log >> /logs/relevant/error.log &
+          tail -n0 -F /var/log/nginx/access.log | grep -E '" (4|5)[0-9]{2} ' >> /logs/relevant/access-errors.log
       volumeMounts:
-        - name: logs
+        - name: nginx-logs
           mountPath: /var/log/nginx
-
+        - name: relevant-logs
+          mountPath: /logs
+      resources:
+        requests:
+          cpu: "50m"
+          memory: "64Mi"
+        limits:
+          cpu: "150m"
+          memory: "128Mi"
   volumes:
-    - name: logs
+    - name: nginx-logs
+      emptyDir: {}
+    - name: relevant-logs
       emptyDir: {}

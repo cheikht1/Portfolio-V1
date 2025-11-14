@@ -7,10 +7,10 @@ import { projects } from '../../data/projects';
 import { ProfileType } from '../../types';
 
 const Projects = () => {
-  const { profile, isDarkMode } = useProfile();
+  const { isDarkMode } = useProfile();
   const [filter, setFilter] = useState<ProfileType | 'all'>('all');
 
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
 
   const filters = [
     { value: 'all' as const, label: t('nav.projects') },
@@ -83,10 +83,10 @@ const Projects = () => {
 
               <div className="p-6">
                 <h3 className={`text-xl font-bold mb-3 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-                  {project.title}
+                  {project.title[locale]}
                 </h3>
                 <p className={`mb-4 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                  {project.description}
+                  {project.description[locale]}
                 </p>
 
                 {project.impact && (
@@ -94,7 +94,7 @@ const Projects = () => {
                     isDarkMode ? 'bg-green-900/30' : 'bg-green-50'
                   } border ${isDarkMode ? 'border-green-700' : 'border-green-200'}`}>
                     <p className={`text-sm font-semibold ${isDarkMode ? 'text-green-400' : 'text-green-700'}`}>
-                      {project.impact}
+                      {project.impact[locale]}
                     </p>
                   </div>
                 )}

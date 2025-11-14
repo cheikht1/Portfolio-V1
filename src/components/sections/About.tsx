@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useProfile } from '../../contexts/ProfileContext';
 import { Award, Briefcase, Code, MapPin } from 'lucide-react';
 import { useLocale } from '../../contexts/LocaleContext';
+import profilePhoto from '../../data/profil.jpg';
 
 const About = () => {
   const { isDarkMode } = useProfile();
@@ -37,11 +38,18 @@ const About = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className={`w-full h-96 rounded-2xl ${isDarkMode ? 'bg-gradient-to-br from-blue-600/20 to-purple-600/20' : 'bg-gradient-to-br from-blue-100 to-purple-100'} flex items-center justify-center border-4 border-dashed ${isDarkMode ? 'border-blue-500/30' : 'border-blue-300'}`}>
-              <div className={`text-center ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                <p className="text-lg">Photo professionnelle</p>
-                <p className="text-sm">(À ajouter)</p>
-              </div>
+            <div
+              className={`w-full h-96 rounded-2xl overflow-hidden border-4 ${
+                isDarkMode
+                  ? 'border-blue-500/40 bg-gradient-to-br from-blue-700/30 to-purple-700/30'
+                  : 'border-blue-300 bg-gradient-to-br from-blue-100 to-purple-100'
+              } shadow-xl`}
+            >
+              <img
+                src={profilePhoto}
+                alt="Portrait professionnel de Cheikh M. T. Thiam"
+                className="w-full h-full object-cover"
+              />
             </div>
           </motion.div>
 

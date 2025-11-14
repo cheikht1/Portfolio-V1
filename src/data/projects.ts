@@ -3,50 +3,104 @@ import { Project } from '../types';
 export const projects: Project[] = [
   {
     id: 'fraud-detection',
-    title: 'Système de détection de fraude temps réel',
-    description: 'Développement d\'un système de détection de fraude en temps réel pour Orange MEA, permettant d\'identifier et de prévenir les transactions frauduleuses avec une précision élevée.',
+    title: {
+      fr: 'Systeme de detection de fraude temps reel',
+      en: 'Real-time Fraud Detection System'
+    },
+    description: {
+      fr: 'Developpement dun systeme de detection de fraude en temps reel pour Orange MEA, permettant didentifier et de prevenir les transactions frauduleuses avec une precision elevee.',
+      en: 'Developed a real-time fraud detection system for Orange MEA to identify and prevent fraudulent transactions with high accuracy.'
+    },
     category: ['data', 'itops'],
     technologies: ['Python', 'Machine Learning', 'Real-time Analytics', 'Grafana', 'Prometheus'],
-    impact: 'Réduction de 35% des fraudes détectées'
+    impact: {
+      fr: 'Reduction de 35% des fraudes detectees',
+      en: 'Reduced detected fraud by 35%'
+    }
   },
   {
     id: 'dashboard-cbs',
-    title: 'Dashboard migration CBS',
-    description: 'Création d\'un dashboard Power BI pour le suivi de la migration du Core Banking System (CBS) à BICIS, permettant un monitoring en temps réel de l\'avancement et des métriques clés.',
+    title: {
+      fr: 'Dashboard migration CBS',
+      en: 'CBS Migration Dashboard'
+    },
+    description: {
+      fr: 'Creation dun dashboard Power BI pour le suivi de la migration du Core Banking System (CBS) a BICIS, offrant un monitoring temps reel de lavancement et des metriques cles.',
+      en: 'Produced a Power BI dashboard tracking the CBS migration at BICIS with real-time progress and key metrics monitoring.'
+    },
     category: ['data'],
     technologies: ['Power BI', 'SQL', 'DAX', 'Data Modeling'],
-    impact: 'Amélioration de 40% de la visibilité sur le projet'
+    impact: {
+      fr: 'Amelioration de 40% de la visibilite sur le projet',
+      en: 'Improved project visibility by 40%'
+    }
   },
   {
     id: 'dashboard-gfa',
-    title: 'Dashboard GFA - Gestion files d\'attente',
-    description: 'Dashboard interactif pour la gestion et l\'optimisation des files d\'attente en agence bancaire, avec analyse des temps d\'attente et recommandations d\'optimisation.',
+    title: {
+      fr: 'Dashboard GFA - Gestion files dattente',
+      en: 'GFA Queue Management Dashboard'
+    },
+    description: {
+      fr: 'Dashboard interactif pour la gestion et loptimisation des files dattente en agence bancaire, avec analyse des temps dattente et recommandations daction.',
+      en: 'Interactive dashboard to manage and optimize bank branch queues with wait time analysis and actionable recommendations.'
+    },
     category: ['data'],
     technologies: ['Power BI', 'Python', 'SQL', 'Statistical Analysis'],
-    impact: 'Réduction de 25% du temps d\'attente moyen'
+    impact: {
+      fr: 'Reduction de 25% du temps dattente moyen',
+      en: 'Cut average waiting time by 25%'
+    }
   },
   {
     id: 'etl-pipeline',
-    title: 'Pipeline ETL automatisé',
-    description: 'Conception et mise en place d\'un pipeline ETL robuste pour l\'extraction, la transformation et le chargement de données multi-sources avec orchestration automatisée.',
+    title: {
+      fr: 'Pipeline ETL automatise',
+      en: 'Automated ETL Pipeline'
+    },
+    description: {
+      fr: 'Conception et mise en place dun pipeline ETL robuste pour lextraction, la transformation et le chargement de donnees multi-sources avec orchestration automatisee.',
+      en: 'Designed and delivered a robust ETL pipeline handling multi-source extraction, transformation, and loading with automated orchestration.'
+    },
     category: ['data', 'devops'],
     technologies: ['Python', 'Apache Airflow', 'SQL', 'Docker', 'AWS S3'],
-    impact: 'Automatisation complète du processus de données'
+    impact: {
+      fr: 'Automatisation complete du processus de donnees',
+      en: 'Achieved full automation of the data ingestion process'
+    }
   },
   {
     id: 'aws-architecture',
-    title: 'Architecture cloud AWS multi-région',
-    description: 'Design et déploiement d\'une architecture cloud AWS hautement disponible et résiliente, avec réplication multi-région et disaster recovery.',
+    title: {
+      fr: 'Architecture cloud AWS multi-region',
+      en: 'AWS Multi-region Cloud Architecture'
+    },
+    description: {
+      fr: 'Design et deploiement dune architecture cloud AWS hautement disponible et resiliente, avec replication multi-region et capacites de reprise apres sinistre.',
+      en: 'Designed and deployed a highly available AWS architecture with multi-region replication and disaster recovery capabilities.'
+    },
     category: ['devops'],
     technologies: ['AWS', 'Terraform', 'CloudFormation', 'VPC', 'EC2', 'RDS'],
-    impact: 'SLA de 99.99% atteint'
+    impact: {
+      fr: 'SLA de 99.99% atteint',
+      en: 'Achieved a 99.99% service-level agreement'
+    }
   },
   {
     id: 'monitoring-solution',
-    title: 'Solution de monitoring Grafana/Prometheus',
-    description: 'Mise en place d\'une solution de monitoring complète avec Grafana et Prometheus pour la supervision des infrastructures critiques et alerting proactif.',
+    title: {
+      fr: 'Solution de monitoring Grafana/Prometheus',
+      en: 'Grafana/Prometheus Monitoring Solution'
+    },
+    description: {
+      fr: 'Mise en place dune solution de monitoring complete avec Grafana et Prometheus pour la supervision des infrastructures critiques et un alerting proactif.',
+      en: 'Implemented a comprehensive Grafana and Prometheus monitoring solution for critical infrastructure with proactive alerting.'
+    },
     category: ['itops', 'devops'],
     technologies: ['Grafana', 'Prometheus', 'Kubernetes', 'Docker', 'AlertManager'],
-    impact: 'Détection 60% plus rapide des incidents'
+    impact: {
+      fr: 'Detection 60% plus rapide des incidents',
+      en: 'Improved incident detection speed by 60%'
+    }
   }
 ];

@@ -6,7 +6,7 @@ import { experiences } from '../../data/experiences';
 
 const Experiences = () => {
   const { isDarkMode } = useProfile();
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
 
   return (
     <section id="experiences" className={`py-20 ${isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
@@ -50,7 +50,7 @@ const Experiences = () => {
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <h3 className={`text-2xl font-bold mb-1 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-                        {exp.position}
+                        {exp.position[locale]}
                       </h3>
                       <p className={`text-lg font-semibold ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`}>
                         {exp.company}
@@ -62,7 +62,7 @@ const Experiences = () => {
                   <div className="flex items-center gap-2 mb-4">
                     <Calendar size={16} className={isDarkMode ? 'text-gray-400' : 'text-gray-600'} />
                     <span className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                      {exp.period}
+                      {exp.period[locale]}
                     </span>
                   </div>
 
@@ -70,7 +70,7 @@ const Experiences = () => {
                     {exp.missions.map((mission, i) => (
                       <li key={i} className={`flex items-start gap-2 ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                         <span className={`mt-2 w-1.5 h-1.5 rounded-full ${isDarkMode ? 'bg-blue-400' : 'bg-blue-600'} flex-shrink-0`} />
-                        <span>{mission}</span>
+                        <span>{mission[locale]}</span>
                       </li>
                     ))}
                   </ul>
@@ -95,7 +95,7 @@ const Experiences = () => {
                       isDarkMode ? 'bg-green-900/30' : 'bg-green-50'
                     } border ${isDarkMode ? 'border-green-700' : 'border-green-200'}`}>
                       <p className={`text-sm font-semibold ${isDarkMode ? 'text-green-400' : 'text-green-700'}`}>
-                        {exp.kpi}
+                        {exp.kpi[locale]}
                       </p>
                     </div>
                   )}

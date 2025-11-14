@@ -48,7 +48,7 @@ const Contact = () => {
               {t('contact.workingTogether')}
             </h3>
             <p className={`mb-8 ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-              {t('contact.workingTogether')}. {t('contact.title')} - {contactInfo.email}
+              {t('contact.subtitle')}
             </p>
 
             <div className="space-y-6 mb-8">
@@ -143,7 +143,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-                  Nom
+                  {t('contact.form.name')}
                 </label>
                 <input
                   type="text"
@@ -160,7 +160,7 @@ const Contact = () => {
 
               <div>
                 <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-                  Email
+                  {t('contact.form.email')}
                 </label>
                 <input
                   type="email"
@@ -177,7 +177,7 @@ const Contact = () => {
 
               <div>
                 <label className={`block mb-2 font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-                  Message
+                  {t('contact.form.message')}
                 </label>
                 <textarea
                   value={formData.message}

@@ -9,6 +9,7 @@ import Experiences from './components/sections/Experiences';
 import Certifications from './components/sections/Certifications';
 import Contact from './components/sections/Contact';
 import Skills from './components/sections/Skills';
+import Education from './components/sections/Education';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Hero />
           <About />
           <Skills />
+          <Education />
           <Projects />
           <Experiences />
           <Certifications />
