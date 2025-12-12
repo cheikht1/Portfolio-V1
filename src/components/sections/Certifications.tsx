@@ -24,46 +24,71 @@ const Certifications = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {certifications.map((cert, index) => (
-            <motion.div
-              key={cert.id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ scale: 1.05, rotateY: 5 }}
-              className={`p-6 rounded-2xl ${
-                isDarkMode
-                  ? 'bg-gradient-to-br from-gray-900 to-gray-800'
-                  : 'bg-gradient-to-br from-white to-gray-50'
-              } shadow-xl border ${isDarkMode ? 'border-gray-700' : 'border-gray-200'} cursor-pointer`}
-            >
-              <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 ${
-                isDarkMode
-                  ? 'bg-gradient-to-br from-green-600 to-cyan-600'
-                  : 'bg-gradient-to-br from-green-500 to-cyan-500'
-              }`}>
-                <Award size={32} className="text-white" />
-              </div>
+          {certifications.map((cert, index) => {
+            const CardContent = () => (
+              <>
+                <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 ${isDarkMode
+                    ? 'bg-gradient-to-br from-green-600 to-cyan-600'
+                    : 'bg-gradient-to-br from-green-500 to-cyan-500'
+                  }`}>
+                  <Award size={32} className="text-white" />
+                </div>
 
-              <h3 className={`text-lg font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-                {cert.name}
-              </h3>
+                <h3 className={`text-lg font-bold mb-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                  {cert.name}
+                </h3>
 
-              <p className={`text-sm font-semibold mb-3 ${
-                isDarkMode ? 'text-blue-400' : 'text-blue-600'
-              }`}>
-                {cert.organization}
-              </p>
+                <p className={`text-sm font-semibold mb-3 ${isDarkMode ? 'text-blue-400' : 'text-blue-600'
+                  }`}>
+                  {cert.organization}
+                </p>
 
-              <div className="flex items-center gap-2">
-                <Calendar size={14} className={isDarkMode ? 'text-gray-400' : 'text-gray-600'} />
-                <span className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-                  {cert.date}
-                </span>
-              </div>
-            </motion.div>
-          ))}
+                <div className="flex items-center gap-2">
+                  <Calendar size={14} className={isDarkMode ? 'text-gray-400' : 'text-gray-600'} />
+                  <span className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                    {cert.date}
+                  </span>
+                </div>
+              </>
+            );
+
+            return (
+              <motion.div
+                key={cert.id}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ scale: 1.05, rotateY: 5 }}
+              >
+                {cert.url ? (
+                  <a
+                    href={cert.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`block h-full p-6 rounded-2xl ${isDarkMode
+                        ? 'bg-gradient-to-br from-gray-900 to-gray-800 hover:from-gray-800 hover:to-gray-700'
+                        : 'bg-gradient-to-br from-white to-gray-50 hover:from-gray-50 hover:to-white'
+                      } shadow-xl border ${isDarkMode ? 'border-gray-700' : 'border-gray-200'} cursor-pointer transition-all group`}
+                  >
+                    <CardContent />
+                    <div className="mt-4 flex justify-end">
+                      <span className={`text-xs font-medium ${isDarkMode ? 'text-green-400' : 'text-green-600'} group-hover:underline`}>
+                        Verify Credential &rarr;
+                      </span>
+                    </div>
+                  </a>
+                ) : (
+                  <div className={`h-full p-6 rounded-2xl ${isDarkMode
+                      ? 'bg-gradient-to-br from-gray-900 to-gray-800'
+                      : 'bg-gradient-to-br from-white to-gray-50'
+                    } shadow-xl border ${isDarkMode ? 'border-gray-700' : 'border-gray-200'} cursor-pointer`}>
+                    <CardContent />
+                  </div>
+                )}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

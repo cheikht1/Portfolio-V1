@@ -11,23 +11,47 @@ import Contact from './components/sections/Contact';
 import Skills from './components/sections/Skills';
 import Education from './components/sections/Education';
 
+import Lenis from '@studio-freight/lenis';
+import { useEffect } from 'react';
+
 function App() {
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+    });
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   return (
     <ProfileProvider>
       <LocaleProvider>
         <div className="min-h-screen pt-16">
-        <Navbar />
-        <main>
-          <Hero />
-          <About />
-          <Skills />
-          <Education />
-          <Projects />
-          <Experiences />
-          <Certifications />
-          <Contact />
-        </main>
-        <Footer />
+          <Navbar />
+          <main>
+            <Hero />
+            <About />
+            <Skills />
+            <Education />
+            <Projects />
+            <Experiences />
+            <Certifications />
+            <Contact />
+          </main>
+          <Footer />
         </div>
       </LocaleProvider>
     </ProfileProvider>
