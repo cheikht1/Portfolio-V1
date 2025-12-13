@@ -13,6 +13,7 @@ import Education from './components/sections/Education';
 
 import Lenis from '@studio-freight/lenis';
 import { useEffect } from 'react';
+import WelcomeAdModal from './components/modals/WelcomeAdModal';
 
 function App() {
   useEffect(() => {
@@ -40,6 +41,7 @@ function App() {
     <ProfileProvider>
       <LocaleProvider>
         <div className="min-h-screen pt-16">
+          <WelcomeAdModal />
           <Navbar />
           <main>
             <Hero />
